@@ -1,16 +1,22 @@
 class Bicycle {
   int cadence;
-  int _speed = 0;
   int gear;
+
+  int _speed = 0;
+  int _maxSpeed = 50;
   int get speed => _speed;
-  Bicycle(this.cadence, this.gear);
-  
+
+  Bicycle(this.cadence, this.gear, this._maxSpeed);
+
   void applyBrake(int decrement) {
     _speed -= decrement;
   }
-  
+
   void applyNitro(int increment) {
-    _speed += increment;
+    if (_speed + increment < _maxSpeed)
+      _speed += increment;
+    else
+      _speed = _maxSpeed;
   }
 
   @override
@@ -18,7 +24,7 @@ class Bicycle {
 }
 
 void main() {
-  var bike = Bicycle(0, 1);
+  var bike = Bicycle(0, 1, 200);
   bike.applyNitro(50);
   print(bike);
   bike.applyBrake(25);
