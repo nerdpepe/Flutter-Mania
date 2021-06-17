@@ -4,10 +4,26 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  // for onPressed button
+// Now MyApp extends 'Stateful' widget instead of the previous 'Stateless'
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
+  var questions = [
+    'What is your name?',
+    'What is your age',
+    'What is your favorite food'
+  ];
+  int quesIndex = 0;
+  // for onPressed button - uses setState to rebuild widget tree on change
   void answerChosen() {
-    print('Answer chosen!');
+    setState(() {
+      quesIndex++;
+    });
   }
 
   @override
@@ -22,17 +38,17 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text('Question'),
+            Text(questions[quesIndex]),
             ElevatedButton(
               onPressed: answerChosen,
               child: Text('Option 1'),
             ),
             ElevatedButton(
-              onPressed: () => print('Answer 2 chosen!'),
+              onPressed: answerChosen,
               child: Text('Option 2'),
             ),
             ElevatedButton(
-              onPressed: () => print('Answer 3 chosen!'),
+              onPressed: answerChosen,
               child: Text('Option 3'),
             ),
           ],
