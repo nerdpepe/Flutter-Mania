@@ -8,21 +8,22 @@ void main() {
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
+// _MyAppState is to be used only by the above stateful widget 'MyApp'
+class _MyAppState extends State<MyApp> {
   var questions = [
     'What is your name?',
     'What is your age',
     'What is your favorite food'
   ];
-  int quesIndex = 0;
+  int _quesIndex = 0;
   // for onPressed button - uses setState to rebuild widget tree on change
-  void answerChosen() {
+  void _answerChosen() {
     setState(() {
-      quesIndex++;
+      _quesIndex++;
     });
   }
 
@@ -38,17 +39,17 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Text(questions[quesIndex]),
+            Text(questions[_quesIndex]),
             ElevatedButton(
-              onPressed: answerChosen,
+              onPressed: _answerChosen,
               child: Text('Option 1'),
             ),
             ElevatedButton(
-              onPressed: answerChosen,
+              onPressed: _answerChosen,
               child: Text('Option 2'),
             ),
             ElevatedButton(
-              onPressed: answerChosen,
+              onPressed: _answerChosen,
               child: Text('Option 3'),
             ),
           ],
