@@ -18,9 +18,18 @@ class MyApp extends StatefulWidget {
 // _MyAppState is to be used only by the above stateful widget 'MyApp'
 class _MyAppState extends State<MyApp> {
   var questions = [
-    'What is your name?',
-    'What is your age',
-    'What is your favorite food'
+    {
+      'questionText': 'What is your name?',
+      'answers': ['Aditya', 'Sid']
+    },
+    {
+      'questionText': 'What is your age',
+      'answers': ['19', '69', '27', '50']
+    },
+    {
+      'questionText': 'What is your favorite food',
+      'answers': ['Noodles', 'Oats', 'Ice-cream']
+    },
   ];
   int _quesIndex = 0;
   // for onPressed button - uses setState to rebuild widget tree on change
@@ -43,19 +52,11 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             Question(
-              questions[_quesIndex],
+              questions[_quesIndex]['questionText'].toString(),
             ),
-            Answer(
-              _answerChosen,
-            ),
-            ElevatedButton(
-              onPressed: _answerChosen,
-              child: Text('Option 2'),
-            ),
-            ElevatedButton(
-              onPressed: _answerChosen,
-              child: Text('Option 3'),
-            ),
+            ...(questions[_quesIndex]['answers'] as List<String>)
+                .map((answer) => Answer(_answerChosen, answer))
+                .toList()
           ],
         ),
       ),
