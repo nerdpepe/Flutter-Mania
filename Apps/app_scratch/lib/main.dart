@@ -17,7 +17,8 @@ class MyApp extends StatefulWidget {
 
 // _MyAppState is to be used only by the above stateful widget 'MyApp'
 class _MyAppState extends State<MyApp> {
-  var questions = [
+  // added const as the questions remain same from compile time
+  static const questions = [
     {
       'questionText': 'What is your name?',
       'answers': ['Aditya', 'Sid']
