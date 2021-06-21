@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
-import './answer.dart';
+import './quiz.dart';
+import './result.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatefulWidget {
 // _MyAppState is to be used only by the above stateful widget 'MyApp'
 class _MyAppState extends State<MyApp> {
   // added const as the questions remain same from compile time
-  static const questions = [
+  static const _questions = [
     {
       'questionText': 'What is your name?',
       'answers': ['Aditya', 'Sid']
@@ -50,18 +50,9 @@ class _MyAppState extends State<MyApp> {
           title: Text('in AppBar'),
           backgroundColor: Colors.purple[200],
         ),
-        body: (_quesIndex < questions.length)
-            ? Column(
-                children: [
-                  Question(
-                    questions[_quesIndex]['questionText'].toString(),
-                  ),
-                  ...(questions[_quesIndex]['answers'] as List<String>)
-                      .map((answer) => Answer(_answerChosen, answer))
-                      .toList()
-                ],
-              )
-            : Center(child: Text('It\' Done Babe')),
+        body: (_quesIndex < _questions.length)
+            ? Quiz(_questions, _quesIndex, _answerChosen)
+            : Result('It\'s Done Babe'),
       ),
     );
   }
