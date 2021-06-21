@@ -50,16 +50,18 @@ class _MyAppState extends State<MyApp> {
           title: Text('in AppBar'),
           backgroundColor: Colors.purple[200],
         ),
-        body: Column(
-          children: [
-            Question(
-              questions[_quesIndex]['questionText'].toString(),
-            ),
-            ...(questions[_quesIndex]['answers'] as List<String>)
-                .map((answer) => Answer(_answerChosen, answer))
-                .toList()
-          ],
-        ),
+        body: (_quesIndex < questions.length)
+            ? Column(
+                children: [
+                  Question(
+                    questions[_quesIndex]['questionText'].toString(),
+                  ),
+                  ...(questions[_quesIndex]['answers'] as List<String>)
+                      .map((answer) => Answer(_answerChosen, answer))
+                      .toList()
+                ],
+              )
+            : Center(child: Text('It\' Done Babe')),
       ),
     );
   }
