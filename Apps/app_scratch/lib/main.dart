@@ -56,6 +56,14 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  // resets the quiz - passed in Result()
+  void _resetQuiz() {
+    setState(() {
+      _totalScore = 0;
+      _quesIndex = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // home : Text('hello') -> sets only text
@@ -68,7 +76,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: (_quesIndex < _questions.length)
             ? Quiz(_questions, _quesIndex, _answerChosen)
-            : Result(_totalScore),
+            : Result(_totalScore, _resetQuiz),
       ),
     );
   }
