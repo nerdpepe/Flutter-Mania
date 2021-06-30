@@ -20,7 +20,10 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final List<Transaction> transactions = [];
+  final List<Transaction> transactions = [
+    Transaction(amount: 35, date: DateTime.now(), id: 'Test', title: 'Peanut'),
+    Transaction(amount: 69, date: DateTime.now(), id: 'Test2', title: 'Butter')
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,14 +31,48 @@ class MyHomePage extends StatelessWidget {
         title: Text('Expense Tracker'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Card(
-            child: Text('Upper Card'),
+          Container(
+            //alignment: Alignment.center,
+            width: double.infinity,
+            child: Card(
+              child: Text(
+                'Upper Card',
+                textAlign: TextAlign.center,
+              ),
+              color: Colors.amber,
+              elevation: 5,
+            ),
           ),
-          Card(
-            child: Text('Lower One'),
-          )
+          Column(
+              children: transactions
+                  .map((tx) => Card(
+                        child: Row(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(3),
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.blueGrey,
+                                  width: 3,
+                                  style: BorderStyle.solid,
+                                ),
+                              ),
+                              child: Text(tx.amount.toString()),
+                            ),
+                            Column(
+                              children: [
+                                Text(tx.title),
+                                Text(tx.date.toString()),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ))
+                  .toList())
         ],
       ),
     );
