@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import './transaction.dart';
 
@@ -21,8 +22,10 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   final List<Transaction> transactions = [
-    Transaction(amount: 35, date: DateTime.now(), id: 'Test', title: 'Peanut'),
-    Transaction(amount: 69, date: DateTime.now(), id: 'Test2', title: 'Butter')
+    Transaction(
+        amount: 35.42, date: DateTime.now(), id: 'Test1', title: 'Shoes'),
+    Transaction(
+        amount: 69.78, date: DateTime.now(), id: 'Test2', title: 'USB Cable')
   ];
   @override
   Widget build(BuildContext context) {
@@ -50,10 +53,13 @@ class MyHomePage extends StatelessWidget {
               children: transactions
                   .map((tx) => Card(
                         child: Row(
+                          //mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                              margin: EdgeInsets.all(5),
-                              padding: EdgeInsets.all(3),
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 10),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 10),
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   color: Colors.blueGrey,
@@ -61,12 +67,31 @@ class MyHomePage extends StatelessWidget {
                                   style: BorderStyle.solid,
                                 ),
                               ),
-                              child: Text(tx.amount.toString()),
+                              child: Text(
+                                'Rs.${tx.amount}',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green),
+                              ),
                             ),
                             Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(tx.title),
-                                Text(tx.date.toString()),
+                                Text(
+                                  tx.title,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  DateFormat.yMMMd().format(tx.date),
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 16,
+                                  ),
+                                ),
                               ],
                             ),
                           ],
