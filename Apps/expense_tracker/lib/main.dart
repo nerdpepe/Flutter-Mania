@@ -34,7 +34,7 @@ class MyHomePage extends StatelessWidget {
         title: Text('Expense Tracker'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
@@ -47,6 +47,27 @@ class MyHomePage extends StatelessWidget {
               ),
               color: Colors.amber,
               elevation: 5,
+            ),
+          ),
+          Card(
+            elevation: 7,
+            child: Container(
+              padding: EdgeInsets.all(7),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Title: '),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Price: '),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text(' Add this Transaction'),
+                  )
+                ],
+              ),
             ),
           ),
           Column(
