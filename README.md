@@ -5,6 +5,8 @@
 [3]: https://github.com/nerdpepe/Flutter-Mania/blob/main/assets/img/Quiz_App_End_screen_1.jpeg
 [4]: https://github.com/nerdpepe/Flutter-Mania/blob/main/assets/img/Quiz_app_End_screen_2.jpeg
 
+[5]: https://github.com/nerdpepe/Flutter-Mania/blob/main/assets/img/Expense_Tracker_1.jpeg
+
 <!-- -->
 
 # 🔆 ᖴᒪᑌTTEᖇ ᗰᗩᑎIᗩ 
@@ -45,9 +47,11 @@ This is the first app I built using Flutter. It has a few questions and based on
 
 ### 📌 E᙭ᑭEᑎᔕE TᖇᗩᑕKEᖇ
 
-Status : 🧩
+![][5]
 
-> Taking my Flutter skills, I attempt to create an expense tracker which is (hopefully) a teeny-tiny bit fancier than the previous app.
+Status : 🧩 (in progress)
+
+⚠️ Taking my Flutter skills, I attempt to create an expense tracker which is (hopefully) a teeny-tiny bit fancier than the previous app.
 
 
 
