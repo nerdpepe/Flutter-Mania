@@ -1,16 +1,28 @@
-# app_scratch
+<!--Links Section -->
 
-A new Flutter project.
+[1]: https://github.com/nerdpepe/Flutter-Mania/blob/main/assets/img/Quiz_app_Ques_1.jpeg
+[2]: https://github.com/nerdpepe/Flutter-Mania/blob/main/assets/img/Quiz_app_Ques_2.jpeg
+[3]: https://github.com/nerdpepe/Flutter-Mania/blob/main/assets/img/Quiz_App_End_screen_1.jpeg
+[4]: https://github.com/nerdpepe/Flutter-Mania/blob/main/assets/img/Quiz_app_End_screen_2.jpeg
 
-## Getting Started
+<!-- -->
 
-This project is a starting point for a Flutter application.
+# ⚡️ 𝙰𝚙𝚙 𝚂𝚌𝚛𝚊𝚝𝚌𝚑 - 𝚀𝚞𝚒𝚣 𝙰𝚙𝚙 𝚖𝚊𝚍𝚎 𝚏𝚛𝚘𝚖 𝚂𝚌𝚛𝚊𝚝𝚌𝚑 
 
-A few resources to get you started if this is your first Flutter project:
+My first Flutter app which I built following a Udemy course. It was a great learning experience and helped me get comfortable with Dart (which looked gibberish before this)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## 🤖 𝙵𝚞𝚗𝚌𝚝𝚒𝚘𝚗𝚊𝚕𝚒𝚝𝚢
 
-For help getting started with Flutter, view our
+- Has three questions with multiple choices to answer from.
+- User gets to see a score at the end
+- And see whether he is the MAN! or just Meh....
+
+## 🌄 𝙸𝚖𝚊𝚐𝚎𝚜
+
+![First Question][1]
+
+### 𝙾𝚝𝚑𝚎𝚛𝚜
+
+For help getting started with Flutter, view the
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
