@@ -1,16 +1,28 @@
-# expense_tracker
+<!--Links Section -->
 
-A new Flutter project.
+[1]: https://github.com/nerdpepe/Flutter-Mania/blob/main/assets/img/Expense_Tracker_1.jpeg
+[2]: https://github.com/nerdpepe/Flutter-Mania/blob/main/assets/img/Expense_Tracker_textfields.jpeg
+[3]: 
+[4]: 
 
-## Getting Started
+<!-- -->
 
-This project is a starting point for a Flutter application.
+# 💰 𝙴𝚡𝚙𝚎𝚗𝚜𝚎 𝚃𝚛𝚊𝚌𝚔𝚎𝚛 - 𝙼𝚢 𝙵𝚊𝚗𝚌𝚢 𝟸𝚗𝚍 𝙰𝚙𝚙 ⚡️
 
-A few resources to get you started if this is your first Flutter project:
+My second Flutter app which I am building at the moment. It allows the user to add transactions and hence keep track of the expenses. Hoping a learn a lot more after my first app (App Scratch)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## 🤖 𝙵𝚞𝚗𝚌𝚝𝚒𝚘𝚗𝚊𝚕𝚒𝚝𝚢
 
-For help getting started with Flutter, view our
+- User can view transactions
+- Expenses can be added using text-fields
+- more soon...
+
+## 🌄 𝙸𝚖𝚊𝚐𝚎𝚜
+
+![Only List][1] ![Text-fields][2]
+
+### 𝙾𝚝𝚑𝚎𝚛𝚜
+
+For help getting started with Flutter, view the
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
